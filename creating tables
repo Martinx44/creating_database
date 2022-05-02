@@ -1,0 +1,39 @@
+CREATE TABLE customer
+(
+    customer_id VARCHAR(40) PRIMARY KEY,
+    customer_name VARCHAR(40),
+	city VARCHAR(20),
+	state VARCHAR(20),
+	country VARCHAR(20),
+	region VARCHAR(20),
+    segment VARCHAR(40),
+    product_id VARCHAR(20)
+);
+
+CREATE TABLE product
+(
+    product_id VARCHAR(30) PRIMARY KEY,
+    product_name VARCHAR(40),
+	category VARCHAR(20),
+	sub_category VARCHAR(20),
+    sales INT,
+	quantity INT,
+	discount INT,
+	profit INT,
+    customer_id VARCHAR(40) REFERENCES customer(customer_id) ON DELETE SET NULL
+);
+
+SELECT * 
+FROM product;
+
+CREATE TABLE orders
+(
+    order_id VARCHAR(30) PRIMARY KEY,
+	order_date DATE,
+    shipping_mode VARCHAR (30),
+    shipping_date DATE,
+    product_id VARCHAR(30) REFERENCES product(product_id) ON DELETE SET NULL
+);
+
+ALTER TABLE customer
+ADD postal_code INT
