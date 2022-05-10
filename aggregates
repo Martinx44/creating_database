@@ -1,0 +1,19 @@
+select sum(sales) as total_sales
+from product
+
+
+SELECT AVG(sales) average_sales
+FROM product
+
+
+SELECT MAX(sales) AS maximum_sale 
+FROM product
+
+
+SELECT MIN(sales) AS minimum_sale 
+FROM product
+
+
+SELECT (sales + profit) total_income
+FROM product
+
