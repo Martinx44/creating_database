@@ -1,4 +1,5 @@
 --product table 
+--each comma represents a column and each line represents a row
 
 INSERT INTO product VALUES('FUR-BO-10001798',	'Bush Somerset Collection Bookcase',	'Furniture',	'Bookcases',	261.96,	2,	0,	41.9136,	'CG-12520')
 
@@ -20,11 +21,13 @@ INSERT INTO product VALUES('OFF-ST-10004186',	'Stur-D-Stor Shelving, Vertical 5-
 
 INSERT INTO product VALUES('OFF-ST-10000107',	'Fellowes Super Stor/Drawer',	'Office Supplies',	'Storage',	55.5,	2,	0,	9.99,	'AG-10270')
 
+--veiwing our progress 
+
 SELECT * 
 FROM product
 
 
---customers table
+--putting values in the customers table
 
 INSERT INTO customer VALUES('CG-12520',	'Claire Gute',	'Henderson',	'Kentucky',	'United States',	'South',	'Consumer',	'FUR-BO-10001798',	42420
 )
@@ -52,12 +55,15 @@ INSERT INTO customer VALUES('PK-19075',	'Pete Kriz',	'Madison',	'Wisconsin',	'Un
 
 INSERT INTO customer VALUES('AG-10270',	'Alejandro Grove',	'West Jordan',	'Utah',	'United States',	'West',	'Consumer',	'OFF-ST-10000107',	84084
 )
+
+--veiwing our progress 
+
 SELECT * 
 FROM customer
 
 
 
---ORDERS TABLE
+--putting values in the ORDERS TABLE
 
 INSERT INTO orders VALUES('CA-2016-152156',	'2016-08-11',	'Second Class',	'2016-11-11',	'FUR-BO-10001798')
 GO
@@ -78,9 +84,9 @@ GO
 INSERT INTO orders VALUES('CA-2014-143336',	'8-27-2014',	'Second Class',	'09-01-2014',	'FUR-FU-10001487')
 GO
 
+--veiwing our progress 
+
 SELECT P.product_id, O.product_id
 FROM product p
 FULL JOIN orders o
-   ON o.product_id = p.product_id
-
---I ran into some errors of unmacthed values with the product_id but i was able to find out the product_id's that are not in the values i entered in the orders table  
+   ON o.product_id = p.product_id 
